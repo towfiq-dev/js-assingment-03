@@ -28,6 +28,8 @@ function gonoVote(array) {
 }
 
 console.log(gonoVote(["ha", "na", "ha", "na"]));
+console.log(gonoVote(["ha", "ha", "ha", "ha"]));
+console.log(gonoVote(["na", "na", "na", "na"]));
 console.log(gonoVote(["ha", "na", "na"]));
 console.log(gonoVote(["ha", "ha", "ha", "na"]));
 console.log(gonoVote("ha, na"));

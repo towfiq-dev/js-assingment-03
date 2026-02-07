@@ -12,13 +12,23 @@ if (typeof omr !== "object" || omr === null || Array.isArray(omr)) {
   if (totalQuestions !== 100) {
     return "Invalid";
   }
+  const rightScore = rightCount * 1;
+  const wrongScore = wrongCount * 0.5;
+  const skipScore = skipCount * 0;
 
-  const score = (rightCount * 1) - (wrongCount * 0.5);
+  const score = rightScore - (wrongScore + skipScore);
 
-  return Math.round(score);
+  const roundScore = Math.round(score)
+
+  return roundScore;
 }
 
 console.log(finalScore({ right: 67, wrong: 23, skip: 10 }));
 console.log(finalScore({ right: 80, wrong: 25, skip: 0 }));
+console.log(finalScore({ right: 50, wrong: 10, skip: 40 }));
+console.log(finalScore({ right: 30, wrong: 30, skip: 40 }));
+console.log(finalScore({ right: 100, wrong: 0, skip: 0 }));
+console.log(finalScore({ right: 0, wrong: 100, skip: 0 }));
+console.log(finalScore({ right: 0, wrong: 0, skip: 100 }));
 console.log(finalScore("!@#"));
 console.log(finalScore(['Raj']));
